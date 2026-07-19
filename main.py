@@ -1,16 +1,18 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from grid import Grid
+from algorithms.bfs import bfs
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    grid = Grid("map.txt")
 
+    result = bfs(grid)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    print(f"Algorithm      : {result['algorithm']}")
+    print(f"Path Found     : {result['path_found']}")
+    print(f"Path Length    : {result['path_length']}")
+    print(f"Visited Nodes  : {result['visited_nodes']}")
+    print(f"Execution Time : {result['execution_time']:.6f} seconds")
+    print("Path:", result["path"])
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
